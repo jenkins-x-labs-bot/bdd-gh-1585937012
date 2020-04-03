@@ -1,0 +1,87 @@
+
+Showing logs for build [32mjenkins-x-labs-bot-bdd-gh-15859-wqjwk-1[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-92sn9[0m
+{"level":"warn","ts":1585937088.973338,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1585937088.9744458,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mjenkins-x-labs-bot-bdd-gh-15859-wqjwk-1[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-bxtvd[0m
+{"level":"warn","ts":1585937089.9719505,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1585937089.972919,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mjenkins-x-labs-bot-bdd-gh-15859-wqjwk-1[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mjenkins-x-labs-bot-bdd-gh-15859-wqjwk-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-jenkins-x-labs-bot-bdd-gh-15859-wqjwk-6pbv2[0m
+{"level":"warn","ts":1585937164.179322,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1585937165.217625,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/******************/bdd-gh-1585937012.git @ v0.0.1 in path /workspace/source"}
+
+Showing logs for build [32mjenkins-x-labs-bot-bdd-gh-15859-wqjwk-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mjenkins-x-labs-bot-bdd-gh-15859-wqjwk-1[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32mjenkins-x-labs-bot-bdd-gh-15859-wqjwk-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-make-build[0m
+CGO_ENABLED=0 GO15VENDOREXPERIMENT=1 go build -ldflags '' -o bin/bdd-gh-1585937012 main.go
+
+Showing logs for build [32mjenkins-x-labs-bot-bdd-gh-15859-wqjwk-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+ERROR: logging before flag.Parse: E0403 18:06:17.213645      11 metadata.go:241] Failed to unmarshal scopes: invalid character 'h' looking for beginning of value
+[36mINFO[0m[0000] No base image, nothing to extract            
+[36mINFO[0m[0000] cmd: EXPOSE                                  
+[36mINFO[0m[0000] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0000] Using files from context: [/workspace/source/bin] 
+[36mINFO[0m[0000] Skipping unpacking as no commands require it. 
+[36mINFO[0m[0000] Taking snapshot of full filesystem...        
+[36mINFO[0m[0000] EXPOSE 8080                                  
+[36mINFO[0m[0000] cmd: EXPOSE                                  
+[36mINFO[0m[0000] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0000] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0000] ENTRYPOINT ["/bdd-gh-1585937012"]            
+[36mINFO[0m[0000] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0000] Using files from context: [/workspace/source/bin] 
+[36mINFO[0m[0000] COPY ./bin/ /                                
+[36mINFO[0m[0000] Taking snapshot of files...                  
+2020/04/03 18:06:21 pushed blob: sha256:46cbc5ba71603d676f519cffba3edc398aa1996585930722cbfd76a1b0aa1cb7
+2020/04/03 18:06:21 pushed blob: sha256:754ade6080c1f0dc206d8236eb5d2a3f0754c04ab44c756625209a74e5aa0618
+2020/04/03 18:06:23 gcr.io/jenkins-x-labs-bdd/bdd-gh-1585937012:0.0.1: digest: sha256:7e0e483ed77996b7dc021012b1da7f491bc89b03a23fc3cbc9256915407d51ec size: 428
+
+Showing logs for build [32mjenkins-x-labs-bot-bdd-gh-15859-wqjwk-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+
+Showing logs for build [32mjenkins-x-labs-bot-bdd-gh-15859-wqjwk-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-changelog[0m
+Converted /workspace/source/charts/bdd-gh-1585937012 to an unshallow repository
+Generating change log from git ref 2bd921175938cfa3cd5eeed41b3a33b014e0bb28 => b50c14ca054cd9ba1893dc2f01568badc24ae0c9
+Associating user x-0 in users.jenkins.io with email jenkins-x@googlegroups.com to git GitProvider user with login -0 as emails match
+Adding label jenkins.io/git-github-userid=-0 to user x-0 in users.jenkins.io
+WARNING: Failed to enrich commit 01d2db3098a2cef4b42426f21e3d2439cf62e83a with issues: User.jenkins.io "x-0" is invalid: metadata.labels: Invalid value: "-0": a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric character (e.g. 'MyValue',  or 'my_value',  or '12345', regex used for validation is '(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?')
+Finding issues in commit messages using git format
+WARNING: No release found for ******************/bdd-gh-1585937012 and tag v0.0.1 so creating a new release
+Updated the release information at https://github.com/******************/bdd-gh-1585937012/releases/tag/v0.0.1
+generated: /workspace/source/charts/bdd-gh-1585937012/templates/release.yaml
+Created Release bdd-gh-1585937012-0-0-1 resource in namespace **
+Updating PipelineActivity ******************-bdd-gh-1585937012-master-1 with version 0.0.1
+Updated PipelineActivities ******************-bdd-gh-1585937012-master-1 with release notes URL: https://github.com/******************/bdd-gh-1585937012/releases/tag/v0.0.1
+
+Showing logs for build [32mjenkins-x-labs-bot-bdd-gh-15859-wqjwk-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-helm-release[0m
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Uploading chart file bdd-gh-1585937012-0.0.1.tgz to http://jenkins-x-chartmuseum:8080/api/charts
+Received 201 response: {"saved":true}
+
+Showing logs for build [32mjenkins-x-labs-bot-bdd-gh-15859-wqjwk-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-promote[0m
+WARNING: prow based install so skip waiting for the merge of Pull Requests to go green as currently there is an issue with gettingstatuses from the PR, see https://github.com/jenkins-x/**/issues/2410
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Promoting app bdd-gh-1585937012 version 0.0.1 to namespace **-staging
+WARNING: 
+Created Pull Request: https://github.com/******************/environment-pr-57-15-mc-staging/pull/1
+Added label updatebot to Pull Request https://github.com/******************/environment-pr-57-15-mc-staging/pull/1
+got git provider status pending from PR https://github.com/******************/environment-pr-57-15-mc-staging/pull/1
+got git provider status pending from PR https://github.com/******************/environment-pr-57-15-mc-staging/pull/1
+got git provider status pending from PR https://github.com/******************/environment-pr-57-15-mc-staging/pull/1
+got git provider status pending from PR https://github.com/******************/environment-pr-57-15-mc-staging/pull/1
+Pull Request https://github.com/******************/environment-pr-57-15-mc-staging/pull/1 is merged at sha 7a64e32bab8f94a54ffc9dd7207d3c0aacd9404a
+Pull Request merged but we are not waiting for the update pipeline to complete!
+WARNING: Could not find the service URL in namespace **-staging for names bdd-gh-1585937012, **-bdd-gh-1585937012, **-staging-bdd-gh-1585937012
